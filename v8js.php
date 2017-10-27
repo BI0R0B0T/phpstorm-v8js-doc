@@ -9,9 +9,14 @@
  * @link http://php.net/v8js
  */
 class V8Js {
+    /* Constants */
+
     const V8_VERSION = "0.1.0";
+
     const FLAG_NONE = 1 ;
     const FLAG_FORCE_ARRAY = 2 ;
+
+    /* Methods */
 
     /**
      * Construct a new V8Js object
@@ -22,6 +27,9 @@ class V8Js {
      *                                          Defaults to empty array.
      * @param array $extensions                 List of extensions registered using V8Js::registerExtension() which should
      *                                          be available in the Javascript context of the created V8Js object.
+     *                                          Note: Extensions registered to be enabled automatically do not need to be
+     *                                          listed in this array. Also if an extension has dependencies, those dependencies
+     *                                          can be omitted as well. Defaults to empty array.
      * @param bool $report_uncaught_exceptions  Controls whether uncaught Javascript exceptions are reported immediately
      *                                          or not. Defaults to TRUE. If set to FALSE the uncaught exception can be
      *                                          accessed using V8Js::getPendingException().
